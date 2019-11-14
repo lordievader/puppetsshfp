@@ -1,0 +1,9 @@
+puppetdb-host: puppet.example.nl
+puppetdb-port: 8081
+puppetdb-ssl_verify: False
+puppetdb-ssl_key: private.pem
+puppetdb-ssl_cert: public.pem
+pdns-api: http://localhost:8082/api/v1
+pdns-key: passphrase
+pdns-zone: example.nl.
+loglevel: WARN
