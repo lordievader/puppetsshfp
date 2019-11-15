@@ -42,7 +42,7 @@ class PDNS():
             extended_name = name
 
         else:
-            extended_name = f'{name}.'
+            extended_name = '{name}.'.format(name=name)
 
         logging.info(
             'Adding record: %-30s %3s %20s %4d',
