@@ -98,31 +98,3 @@ def read_config():
         config = yaml.load(config_file, Loader=yaml.Loader)
 
     return config
-
-
-def main():
-    config = read_config()
-    logging.basicConfig(
-        level=config["loglevel"])
-    logging.debug("current configuration: %s", config)
-
-    # gather nodes from puppet db
-    nodes = puppet(config)
-    logging.debug(nodes)
-
-    # Init the pdns api
-    pdns = PDNS(
-        config["pdns-api"],
-        config["pdns-key"],
-        config["pdns-zone"])
-
-    # Check if the nodes are correct in the DNS
-    dns = check_nodes(pdns, nodes)
-
-    pdb.set_trace()
-    # Add missing entries into the DNS
-    add_entries(pdns, dns)
-
-
-if __name__ == '__main__':
-    main()
