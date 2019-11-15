@@ -26,6 +26,10 @@ def main():
     dns = functions.check_nodes(nodes)
 
     # Add missing entries into the DNS
+    if config['loglevel'] == 'DEBUG':
+        import pdb
+        pdb.set_trace()
+
     functions.add_entries(powerdns, dns)
 
 

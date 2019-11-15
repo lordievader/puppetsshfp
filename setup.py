@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='puppetsshfp',
-    version='0.1.1',
+    version='0.1.2',
     description='Toolie for bridging Puppet SSHFP records into PowerDNS.',
     author='Olivier van der Toorn',
     author_email='oliviervdtoorn@gmail.com',
