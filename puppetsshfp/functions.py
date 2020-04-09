@@ -31,6 +31,9 @@ def puppet(config):
         facts = puppetdb.facts(key)
         for fact in facts:
             node_name = fact.node
+            if config['pdns-zone'] not in node_name:
+                continue
+
             ip_address = fact.value
             if node_name in nodes:
                 nodes[node_name][value] = ip_address
